@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic"> <!-- ( ng-app é a chamada do modulo principal na página) -->
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css"> <!-- Importa os Efeitos de CSS da Página -->
         <script src="js/lib/angular.min.js"></script> <!--Importa o Script Do Angular-->
         <script src="js/main.js"></script> <!--Importa os Módulos do Angular-->
         <script src="js/controllers/fotos-controller.js"></script> <!-- Importa o Fotos Controller -->
+        <script src="js/controllers/foto-controller.js"></script> <!-- Importa o Foto Controller -->
+        <script src="js/directives/minhas-diretivas.js"></script> <!-- Importa às Diretivas -->
+        <script src="js/lib/angular-animate.min.js"></script> <!-- Importa o Módulode Animações de o Angular JS -->
+        <script src="js/lib/angular-route.min.js"></script> <!-- Importa o Módulo de Rotas do Angular -->
+        
     </head>
     <body>
-        <div class="container" ng-controller="FotosController"> <!--( ng-controller ) é a Diretiva que indica qual controller será usado no módulo-->
-            <div class="jumbotron">
-                <h1 class="text-center">Alurapic</h1>
-            </div>
-            <div ng-repeat="foto in fotos" class="panel panel-default"> <!--( ng-repeat ) é a Diretiva que faz uma repetição, similar ao ngFor* do Angular -->
-                <div class="panel-heading">
-                    <h3>{{foto.titulo}}</h3>
-                </div>
-                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-            </div>
-           
-        </div> <!-- fim container -->        
+        <div class="container">
+            <ng-view></ng-view>
+        </div><!-- fim container -->
     </body>
 </html>
